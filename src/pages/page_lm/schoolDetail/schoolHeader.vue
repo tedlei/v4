@@ -10,7 +10,7 @@
         <template v-for="(item,i) of heaList">
           <li :key="i" class="sch_li" :class="i===num*1?'schBorderBottom':''" @click="topHea(i,item.src)">{{item.title}}</li>
         </template>
-        <li class="sch_li" v-if="isShowPhone"  @click="topHea(5,teacObj.schoolUrl)">进入学校网站</li>
+        <!-- <li class="sch_li" v-if="isShowPhone"  @click="topHea(5,teacObj.schoolUrl)">进入学校网站</li> -->
       </ul>
       <div style="width:300px;" v-if="!isShowPhone"></div>
       <div class="sch_jgz" @click="topGz(teacObj.id,isGz)" :class="isGz?'ygz':''">{{isGz?'已关注':"+关注"}}</div>
