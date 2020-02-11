@@ -1,3 +1,5 @@
+console.log('开始加载ele与全局mixins')
+console.time()
 import Vue from 'vue'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
@@ -13,7 +15,7 @@ Vue.use(VueLazyload, {
     error: '../public/images/loading.png',
     loading: '../public/images/loading.png',
     attempt: 1
-});
+})
 
 Vue.use(ElementUI);
 Vue.use(mixins);

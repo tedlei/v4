@@ -1,7 +1,8 @@
 // vue.config.js
 const path = require('path')
+const NODE_ENV = process.env.NODE_ENV
 
-module.exports = {
+let config = {
     // 选项...
     configureWebpack: {
         resolve: {
@@ -48,3 +49,31 @@ module.exports = {
     }
 }
 
+if (NODE_ENV === "production") {
+    config.configureWebpack.devtool = "none"
+    config.publicPath = "./"
+
+    // const CompressionWebpackPlugin = require('compression-webpack-plugin');
+    // config.configureWebpack.plugins = [
+    //     new CompressionWebpackPlugin({
+    //         filename: '[path].gz[query]',
+    //         algorithm: 'gzip',
+    //         test: /\.js$|\.json$|\.css/,
+    //         threshold: 0, // 只有大小大于该值的资源会被处理
+    //         minRatio: 0.8, // 只有压缩率小于这个值的资源才会被处理
+    //         deleteOriginalAssets: true // 删除原文件
+    //     })
+    // ]
+} else {
+    config.configureWebpack.devServer = {
+        overlay: {
+            warnings: false,
+            errors: true
+        },
+        // lintOnSave: false
+    }
+    config.configureWebpack.devtool = "cheap-module-eval-source-map"
+    config.publicPath = "/"
+}
+
+module.exports = config

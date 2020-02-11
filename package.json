@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve --open --config vue.serve.config.js",
-    "build": "vue-cli-service build --config vue.build.config.js",
+    "serve": "vue-cli-service serve --open",
+    "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
