@@ -1,5 +1,6 @@
 import chinaCityList from '../../../../../public/js/chinaCityList.js'
 import infoVerify from '@/common/infoVerify.js'
+import {downloadImageInit} from '@/common/fn.js'
 export default {
   props:['isUpdate'],
   data() {
@@ -62,7 +63,16 @@ export default {
   created() {
     this.getProvince();
   },
+  mounted(){
+    this.init();
+  },
   methods: {
+    // 初始化下载
+    init(){
+      downloadImageInit('logo', require('../../../../../public/file/logo.png'), 'logo')
+      downloadImageInit('authorization', require('../../../../../public/file/authorization.doc'), '授权文件模板.doc')
+    },
+
     //获取图片路劲
     handleAvatarSuccess(res, file ,str) {
       switch(str){
@@ -226,7 +236,7 @@ export default {
       }
       this.fetch({url,data:userInfo,method:'post'},2).then(res=>{
         if(res.data.success){
-          this.$message({message:res.data.message,type:'success'});
+          this.$message({message:'提交成功，请等待审核',type:'success'});
           setTimeout(() => {
             // this.decideIsLogin(userInfo.user.phone);
           }, 2000);

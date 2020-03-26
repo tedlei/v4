@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve --open --config vue.serve.config.js",
-    "build": "vue-cli-service build --config vue.build.config.js",
+    "serve": "vue-cli-service serve --open",
+    "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
@@ -24,6 +24,7 @@
     "compression-webpack-plugin": "^3.1.0",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
+    "file-loader": "^4.2.0",
     "less": "^3.0.4",
     "less-loader": "^5.0.0",
     "postcss-css-variables": "^0.14.0",

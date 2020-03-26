@@ -8,7 +8,7 @@
         <div class="context">
             <h5>友情链接</h5>
             <ul class="fx">
-                <li class="pointer" @click="toPage" v-for="(item, i) in schoolList" :key="i">{{item}}</li>
+                <li class="pointer" @click="toPage(item.url)" v-for="(item, i) in schoolList" :key="i">{{item.title}}</li>
             </ul>
         </div>
     </div>
@@ -48,8 +48,8 @@
             async getPic(){
               this.picObject = (await this.getAdvertisingData(5))[0];
             },
-            toPage(){
-                this.push({});
+            toPage(url){
+                window.open(url);
             }
         },
         created() {

@@ -211,8 +211,7 @@
           </el-upload>
         </div>
         <div class="ifi_up_text">
-          上传清晰的学校LOGO,照片大小不超过300K,建议上传尺寸300*100px,上传成功即表明雏鸟拥有其图片的使用权,
-          LOGO模板<a href="../../../../../public/file/LOGO模板.png" download="" >下载</a>
+          照片大小不超过300K<a id="logo">下载</a>
         </div>
       </li>
       <li class="ifi_li fx">
@@ -229,7 +228,7 @@
           </el-upload>
         </div>
         <div class="ifi_up_text">
-          上传营业执照图片,照片大小不超过1M,信息只为审核使用，不对外展示
+          照片大小不超过1M
         </div>
       </li>
       <li class="ifi_li fx">
@@ -246,7 +245,7 @@
           </el-upload>
         </div>
         <div class="ifi_up_text">
-          上传办学许可照片(可不上传),照片大小不超过1M,信息只为审核使用，不对外展示
+          照片大小不超过1M
         </div>
       </li>
 
@@ -264,8 +263,7 @@
           </el-upload>
         </div>
         <div class="ifi_up_text">
-          上传清晰的授权文件图片,照片大小不超过1M,图片只为审核使用，
-          不对外展示。文件模板<a href="../../../../../public/file/雏鸟授权书.doc" download="" >下载</a>
+          文件模板<a id="authorization">下载</a>
         </div>
       </li>
       <li class="ifi_li fx" style="margin-top:30px;" v-if="true">
@@ -288,6 +286,6 @@
 import './infoFillIn.less'
 import info from './infoFillIn.js'
 export default {
-  ...info
+  ...info,
 }
 </script>

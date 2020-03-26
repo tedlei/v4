@@ -25,7 +25,8 @@
             <div class="banner" id="banner">
                 <el-carousel class="banner-carousel" trigger="click" height="462px">
                     <el-carousel-item v-for="(item, idx) in bannerPic" :key="idx">
-                        <a :href="item.url"><img v-lazy="item.pic" alt=""></a>
+                        <!-- <a :href="item.url"><img v-lazy="item.pic" alt=""></a> -->
+                        <a :href="item.url"><img src="../../../public/images/banner.png" alt=""></a>
                     </el-carousel-item>
                 </el-carousel>
             </div>
@@ -293,7 +294,7 @@
                         ]
                     }
                 ],
-                bannerPic: []
+                bannerPic: [],
             }
         },
         methods: {
@@ -337,9 +338,6 @@
         width: 100vw;
         .el-carousel__item{
             width: 100vw;
-            img{
-                width: 100vw;
-            }
         }
     }
 </style>
@@ -412,11 +410,13 @@
                     .el-carousel__item{
                         width: 1200px;
                         img{
-                            width: 1200px;
+                            position: absolute;
+                            left: 50%;
+                            transform: translateX(-50%);
+                            height: 100%;
                         }
                     }
                 }
-                
             }
         }
     }

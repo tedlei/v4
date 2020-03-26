@@ -44,7 +44,7 @@
           <img :src="dataList.sendImgSrc" alt="正在加载……" />
         </div>
         <div class="chatw_inpur fx">
-          <el-input type="textarea" :rows="3" placeholder="请输入内容" @keydown.enter.native="enterSend" v-model="input"></el-input>
+          <el-input type="textarea" :rows="3" placeholder="请输入内容" @keydown.enter.native="enterSend" v-model="input" maxlength="400"></el-input>
           <div class="chatw_font_right">{{characterNum}}字</div>
         </div>
       </div>
@@ -73,7 +73,6 @@ export default {
     characterNum:function(){
       let num = this.input.length;
       if(num>=400){
-        this.input = this.input.slice(0,399);
         this.$message({ message: "最多输入400个字符", type: "warning" });
       }
       return 400-num;

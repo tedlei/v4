@@ -16,7 +16,7 @@
 
 <script>
 import footerDiv from '@/components/component_lm/footer'
-import infoFillIn from './infoFillIn/infoFillIn'
+import infoFillIn from './infoFillIn/infoFillIn.vue'
   export default {
     components:{footerDiv,infoFillIn},
     data() {
