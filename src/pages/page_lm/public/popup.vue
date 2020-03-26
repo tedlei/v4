@@ -53,7 +53,7 @@
       </li>
       <li></li>
     </ul>
-    <div class="qryy" @click="ControlPopup()">确认预约</div>
+    <div class="qryy" @click="ControlPopup">确认预约</div>
   </div>
 </template>
 
@@ -181,6 +181,8 @@
           }
         }
         this.fetch({url,data,method:'post'},IP).then(res=>{
+          console.log(res, 7777777);
+          
           let obj = res.data;
           if(obj.success){
             this.$message({message:obj.message,type:'success'})

@@ -1,8 +1,10 @@
 <template>
     <div class="footAdvertising">
-        <img v-lazy="picSrc"
+        <a :href="picObject.url">
+            <img v-lazy="picObject.pic"
              class="advertising"
              alt="" />
+        </a>
         <div class="context">
             <h5>友情链接</h5>
             <ul class="fx">
@@ -16,7 +18,7 @@
     export default {
         data(){
             return {
-                picSrc: '',
+                picObject: '',
                 schoolList: ['西南大学', '重庆工商大学', '洞庭湖大学', '重庆工商大学', '洞庭湖大学'
                     , '重庆工商大学', '洞庭湖大学', '重庆工商大学', '洞庭湖大学', '重庆工商大学', '洞庭湖大学'
                     , '重庆工商大学', '洞庭湖大学', '重庆工商大学', '洞庭湖大学', '重庆工商大学', '洞庭湖大学'
@@ -44,7 +46,7 @@
                 // })
             },
             async getPic(){
-              this.picSrc = (await this.getAdvertisingData(5))[0].pic;
+              this.picObject = (await this.getAdvertisingData(5))[0];
             },
             toPage(){
                 this.push({});

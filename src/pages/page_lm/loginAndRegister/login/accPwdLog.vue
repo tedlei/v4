@@ -112,19 +112,16 @@ export default {
         let obj = res.data;
         if(obj.success){
           this.pop('登录成功','success');
-
           this.setItem('userInfo',obj.data);
-
           // 用于传递给后台退出当前用户
           document.cookie = "phone=" + obj.data.user.phone
                             + ";expires=" + new Date(Date.now() + 24*60*60*1000*30).toUTCString;
-
           let sett = setTimeout(() => {
             this.$store.commit('changeUpdateUserInfo', true);
             this.push('/');
             clearTimeout(sett);
           }, 1000);
-
+          
          
           // 获取当前用户是否为客服用户， 且将获取的成为客服的对应的学校id保存
           let {schoolId, nickName} = await this.getIsService(obj.data);

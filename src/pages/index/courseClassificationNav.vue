@@ -25,7 +25,7 @@
             <div class="banner" id="banner">
                 <el-carousel class="banner-carousel" trigger="click" height="462px">
                     <el-carousel-item v-for="(item, idx) in bannerPic" :key="idx">
-                        <img v-lazy="item.pic" alt="">
+                        <a :href="item.url"><img v-lazy="item.pic" alt=""></a>
                     </el-carousel-item>
                 </el-carousel>
             </div>
