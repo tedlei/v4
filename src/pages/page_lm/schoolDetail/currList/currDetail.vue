@@ -4,7 +4,7 @@
     <target class="currd_d2" :obj="obj" :schoolObj="teacObj"></target>
     <!-- <recommend listType="currList" :obj="obj" class="currd_d2"></recommend> -->
     <div class="popup fx" v-if="isShowPopup">
-      <popup :obj="obj" @ControlPopup="ControlPopup"></popup>
+      <popup :obj="obj" @ControlPopup="ControlPopup" type="curr"></popup>
     </div>
   </div>
 </template>
@@ -12,10 +12,10 @@
 <script>
 import detail from '@/pages/page_lm/curriculumDetail/detail'
 import target from '@/pages/page_lm/curriculumDetail/target'
-import recommend from '@/pages/page_lm/curriculumDetail/recommend'
+// import recommend from '@/pages/page_lm/curriculumDetail/recommend'
 import popup from '@/pages/page_lm/public/popup'
   export default {
-    components:{detail,target,recommend,popup},
+    components:{detail,target,popup},
     props:['teacObj'],
     data() {
       return {
@@ -30,6 +30,10 @@ import popup from '@/pages/page_lm/public/popup'
       //点击X关闭弹窗
       ControlPopup:function(boo){
         this.isShowPopup=boo;
+        let id = this.obj.id;
+        let childPage = this.$children[0];
+        childPage.setchGz(id)
+        childPage.setchYy(id)
       },
       //获取课程详情数据
       getData:function(id){

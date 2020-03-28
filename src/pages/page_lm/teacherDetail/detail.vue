@@ -9,8 +9,8 @@
           <el-tag class="tag-j tag-d boxSing">
             {{obj.teacherName}}
           </el-tag>
-          <el-tag 
-          class="tag-j m-l boxSing back" 
+          <el-tag
+          class="tag-j m-l boxSing back"
           :class="isGz?'ygz':''" 
           @click="topGz(obj.id,isGz)">{{!isGz?'+ 关注':'已关注'}}</el-tag>
         </div>

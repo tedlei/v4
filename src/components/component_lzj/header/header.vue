@@ -244,23 +244,23 @@ export default {
     getServiceMessage() {
       if (!this.userInfo) return;
       let userInfo = this.userInfo;
-
+      
       this.fetch(
         {
           url: "userMessage/selectSchoolService.do",
           method: "post",
           data: {
             phone: userInfo.user.phone,
-            schoolId: userInfo.schoolUser ? userInfo.schoolUser.id : ""
+            // 是学校用户则查询被咨询的消息  否则查询自身身为客服时被咨询的消息
+            schoolId: userInfo.schoolUser ? userInfo.schoolUser.id : "",
           }
         },
         2
       ).then(res => {
         let data = res.data;
-        // isService = false;
+
         if (data !== "") {
-          data = data.object.mess;
-          // isService = true;
+          data = data.rows;
         } else {
           data = [];
         }

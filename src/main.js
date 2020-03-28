@@ -1,5 +1,3 @@
-console.log('开始加载ele与全局mixins')
-console.time()
 import Vue from 'vue'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'

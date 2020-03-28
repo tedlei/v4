@@ -82,10 +82,11 @@
              * socket
              */
             createSocket(){
-                let ws = socket('http://120.78.145.39:9108/');
+                let ws = socket('http://192.168.3.88:9108/');
                 ws.on('communication', msg => {   // key 用于接受服务端定义为key的对应消息
                     this.send(msg, 'from');
                 });
+                
                 let userId = this.userInfo.user.id;
                 ws.emit('username', 'user' + userId);
                 this.socket = ws;

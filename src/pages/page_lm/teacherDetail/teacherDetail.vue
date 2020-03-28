@@ -16,14 +16,13 @@
 </template>
 
 <script>
-import titleNav from '@/pages/index/titleNav'
 import breadcrumb from '@/components/component_lm/breadcrumb'
 import popup from '@/pages/page_lm/public/popup'
 import detail from './detail'
 import target from './target'
-import footAdvertising from '@/pages/index/footAdvertising'
+
   export default {
-    components:{titleNav,breadcrumb,popup,detail,target,footAdvertising},
+    components:{breadcrumb,popup,detail,target},
     data() {
       return {
         obj:{},
@@ -46,6 +45,8 @@ import footAdvertising from '@/pages/index/footAdvertising'
       //点击X关闭弹窗
       ControlPopup:function(boo){
         this.isShowPopup=boo;
+        console.log(1111111);
+        
         if(!boo)this.$children[1].seachIsYy = true;
       },
 

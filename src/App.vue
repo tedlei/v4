@@ -21,7 +21,6 @@
             }
         },
         created(){
-            // console.log('开始加载内容')
             // store中获取本地用户信息
             this.$store.getters.vm(this);
 

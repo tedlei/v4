@@ -16,7 +16,6 @@ const Api = {
 		this.prototype.authLogin = false	// 是否开启登陆权限验证
 		this.prototype.localtion = 'http://112.74.18.182:9101/cnjy-search-web'  //其他接口ip
 
-
 		this.prototype.parse = Api.parse;
 		this.prototype.stringify = Api.stringify;
 		this.prototype.isLogin = Api.isLogin;
@@ -36,12 +35,19 @@ const Api = {
 	netWork: (() => {
 		let _this = null;
 		let ipList = [
-			'http://112.74.18.182:9101/cnjy-search-web/',
-			'http://112.74.16.235:9102/cnjy-user-web/',
-			'http://112.74.16.235:9103/cnjy-curriculum-web/',
-			'http://120.24.45.159:9104/cnjy-school-web/',
-			'http://120.24.45.159:9105/cnjy-teacher-web/',
-			'http://120.78.145.39:9106/cnjy-chuniao-web/'
+			// 'http://112.74.18.182:9101/cnjy-search-web/',
+			// 'http://112.74.16.235:9102/cnjy-user-web/',
+			// 'http://112.74.16.235:9103/cnjy-curriculum-web/',
+			// 'http://120.24.45.159:9104/cnjy-school-web/',
+			// 'http://120.24.45.159:9105/cnjy-teacher-web/',
+			// 'http://120.78.145.39:9106/cnjy-chuniao-web/'
+
+			'http://192.168.3.88:9101',
+			'http://192.168.3.88:9102',
+			'http://192.168.3.88:9103',
+			'http://192.168.3.88:9104',
+			'http://192.168.3.88:9105',
+			'http://192.168.3.88:9106'
 		];
 
 		// 网络请求

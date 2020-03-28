@@ -158,13 +158,14 @@
         }
         let url = '/course/appOin.do';
         let IP = 3
+        
         let data = {
           appointment:{
             appoMessage:leaveMsg, //预约消息
             userName:name,    //用户姓名
             appoPhone:phone,   //预约电话
-            schoolId:this.type==='curr'?this.obj.schoolName:this.obj.teacherSchoolId,   //学校id
-            appoName:this.type==='curr'?'1':'2'    //预约分类    
+            schoolId:this.type==='curr'?this.obj.schoolId:this.obj.teacherSchoolId,   //学校id
+            appoName:this.type==='curr'?'1':'2'    //预约分类
           },
           courseAppointment:{
             userId:this.userInfo.user.id,     //用户id
@@ -181,8 +182,6 @@
           }
         }
         this.fetch({url,data,method:'post'},IP).then(res=>{
-          console.log(res, 7777777);
-          
           let obj = res.data;
           if(obj.success){
             this.$message({message:obj.message,type:'success'})

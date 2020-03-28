@@ -15,18 +15,24 @@
                             <ul class="courseClassificationListRightUl fx">
                                 <li class="col333 pointer"
                                     v-for="(val, j) in value.optionContextList"
-                                    :key="j"
+                                    :key="j"                      
                                     @click="toPage([i, index, j], [item.tit, value.optionTit, val])">{{val}}</li>
                             </ul>
                         </div>
                     </div>
                 </li>
             </ul>
+            <!-- <div class="banner" id="banner">
+                <el-carousel class="banner-carousel" trigger="click" height="462px">
+                    <el-carousel-item v-for="(item, idx) in bannerPic" :key="idx">
+                        <a :href="item.url"><img v-lazy="item.pic" alt=""></a>
+                    </el-carousel-item>
+                </el-carousel>
+            </div> -->
             <div class="banner" id="banner">
                 <el-carousel class="banner-carousel" trigger="click" height="462px">
                     <el-carousel-item v-for="(item, idx) in bannerPic" :key="idx">
-                        <!-- <a :href="item.url"><img v-lazy="item.pic" alt=""></a> -->
-                        <a :href="item.url"><img src="../../../public/images/banner.png" alt=""></a>
+                        <a :href="item.url"><img v-lazy="item.pic" alt=""></a>
                     </el-carousel-item>
                 </el-carousel>
             </div>
