@@ -53,7 +53,7 @@
       </li>
       <li></li>
     </ul>
-    <div class="qryy" @click="ControlPopup()">确认预约</div>
+    <div class="qryy" @click="ControlPopup">确认预约</div>
   </div>
 </template>
 
@@ -158,13 +158,14 @@
         }
         let url = '/course/appOin.do';
         let IP = 3
+        
         let data = {
           appointment:{
             appoMessage:leaveMsg, //预约消息
             userName:name,    //用户姓名
             appoPhone:phone,   //预约电话
-            schoolId:this.type==='curr'?this.obj.schoolName:this.obj.teacherSchoolId,   //学校id
-            appoName:this.type==='curr'?'1':'2'    //预约分类    
+            schoolId:this.type==='curr'?this.obj.schoolId:this.obj.teacherSchoolId,   //学校id
+            appoName:this.type==='curr'?'1':'2'    //预约分类
           },
           courseAppointment:{
             userId:this.userInfo.user.id,     //用户id

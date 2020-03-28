@@ -13,7 +13,7 @@ Vue.use(VueLazyload, {
     error: '../public/images/loading.png',
     loading: '../public/images/loading.png',
     attempt: 1
-});
+})
 
 Vue.use(ElementUI);
 Vue.use(mixins);

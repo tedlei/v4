@@ -11,9 +11,8 @@
 
 <script>
 import coList from '../public/coList'
-import schColList from '../public/schColList'
   export default {
-    components:{coList,schColList},
+    components:{coList},
     props:['teacherList','listType'],
     data() {
       return {

@@ -24,7 +24,7 @@ import popup from '@/pages/page_lm/public/popup'
         schoolObj:{},  //学校数据
       }
     },
-    created(){
+    created(){ 
       this.getTeacherObj(this.$route.query.teacId);
     },
     methods:{

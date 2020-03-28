@@ -16,7 +16,6 @@ const Api = {
 		this.prototype.authLogin = false	// 是否开启登陆权限验证
 		this.prototype.localtion = 'http://112.74.18.182:9101/cnjy-search-web'  //其他接口ip
 
-
 		this.prototype.parse = Api.parse;
 		this.prototype.stringify = Api.stringify;
 		this.prototype.isLogin = Api.isLogin;

@@ -15,17 +15,24 @@
                             <ul class="courseClassificationListRightUl fx">
                                 <li class="col333 pointer"
                                     v-for="(val, j) in value.optionContextList"
-                                    :key="j"
+                                    :key="j"                      
                                     @click="toPage([i, index, j], [item.tit, value.optionTit, val])">{{val}}</li>
                             </ul>
                         </div>
                     </div>
                 </li>
             </ul>
+            <!-- <div class="banner" id="banner">
+                <el-carousel class="banner-carousel" trigger="click" height="462px">
+                    <el-carousel-item v-for="(item, idx) in bannerPic" :key="idx">
+                        <a :href="item.url"><img v-lazy="item.pic" alt=""></a>
+                    </el-carousel-item>
+                </el-carousel>
+            </div> -->
             <div class="banner" id="banner">
                 <el-carousel class="banner-carousel" trigger="click" height="462px">
                     <el-carousel-item v-for="(item, idx) in bannerPic" :key="idx">
-                        <img v-lazy="item.pic" alt="">
+                        <a :href="item.url"><img v-lazy="item.pic" alt=""></a>
                     </el-carousel-item>
                 </el-carousel>
             </div>
@@ -293,7 +300,7 @@
                         ]
                     }
                 ],
-                bannerPic: []
+                bannerPic: [],
             }
         },
         methods: {
@@ -337,9 +344,6 @@
         width: 100vw;
         .el-carousel__item{
             width: 100vw;
-            img{
-                width: 100vw;
-            }
         }
     }
 </style>
@@ -412,11 +416,13 @@
                     .el-carousel__item{
                         width: 1200px;
                         img{
-                            width: 1200px;
+                            position: absolute;
+                            left: 50%;
+                            transform: translateX(-50%);
+                            height: 100%;
                         }
                     }
                 }
-                
             }
         }
     }

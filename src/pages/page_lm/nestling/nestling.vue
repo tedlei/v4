@@ -27,7 +27,7 @@ export default {
         {title:'问题反馈',src:'/coupleBack'},
         {title:'链接交换',src:'/linKswop'},
       ],
-      selNum:0,
+      selNum:0
     };
   },
   created() {
@@ -41,7 +41,6 @@ export default {
       this.push({path:'/nestling'+src,query:{num:this.selNum}})
     }
   }
-
 }
 
 </script>
@@ -70,9 +69,12 @@ export default {
         line-height: 50px;
         cursor: pointer;
       }
-      .nt_li:hover,.sel_li{
+      .sel_li{
         background: var(--colMain);
         color: white;
+      }
+      .nt_li:not(.sel_li):hover{
+        color: var(--colMain);
       }
       .sel_li{
         cursor: default;

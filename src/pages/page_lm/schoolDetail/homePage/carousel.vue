@@ -7,7 +7,6 @@
 </template>
 
 <script>
-import obj from '../../curriculumList/data'
   export default {
     props:["teacObj"],
     data() {

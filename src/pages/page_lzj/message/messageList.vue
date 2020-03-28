@@ -16,7 +16,7 @@
                      @mouseleave="deleteBtn = -1">
                     <div class="bor-bottom">
                         <div class="content-option-message pointer fx">
-                            <span class="col333">{{'【' + (isService && cutBool*1 === 2 ? item.nickName : item.userName) + '】'}}</span>
+                            <span class="col333">{{'【' + (!isSchool ? item.nickName : isService && cutBool*1 === 2 ? item.nickName : item.userName) + '】'}}</span>
                             <span class="col666">{{item.messageContent}}</span>
                             <span class="content-option-message-time">{{item.time}}</span>
                         </div>
@@ -60,7 +60,7 @@
                 oldChatMessageObj: {},
                 oldServiceMassage: {},
                 messageObj: {}, // 显示数据，根据路由切换获取更新
-                deleteBtn: -1 // 渲染数据对象的两个序号， 用于判断是否显示删除按钮
+                deleteBtn: -1, // 渲染数据对象的两个序号， 用于判断是否显示删除按钮
             }
         },
         props: ['cutBool', 'isChat', 'oldCurrentPage1', 'oldCurrentPage2', 'oldCurrentPage3', 'isSchool', 'isService'],
@@ -98,10 +98,10 @@
                 this.currentPage = value;
                 let {isSchool, currentPage, pageSize} = this;
                 // 为非学校用户且是客服时获取客服消息 反之获取系统消息
-                let isService = await this.$parent.getIsService(currentPage - 1, pageSize);
+                let serviveMessageList = await this.$parent.getIsService(currentPage - 1, pageSize);
                 
-                if ((isSchool && isService) || !isSchool) {
-                    this.getMessageList('oldServiceMassage', '3', 'kefu', value, isService);
+                if ((isSchool && serviveMessageList) || !isSchool) {
+                    this.getMessageList('oldServiceMassage', '3', 'kefu', value, serviveMessageList);
                 } else this.getMessageList('oldSystemMessageObj', '1', 'sys', this.oldCurrentPage1);
             },
             /**
@@ -189,7 +189,6 @@
                 // } else {
                 //     result = id;
                 // }
-                console.log(result, userId,schoolId,  444);
 
                 this.$emit('changeChat', result, schoolId);
                 // 将消息改为已读

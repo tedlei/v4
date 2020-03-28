@@ -111,7 +111,6 @@ export default {
     topUpdate: function() {
       if(this.isRegBtn)return;
       let phoneNum = this.phoneNum;
-      let verifyCode = this.verifyCode;
       let password = this.password;
       let url = '/user/updatePassword.do?password='+password+"&phone="+phoneNum
       if(!this.yzmIsCorrect){

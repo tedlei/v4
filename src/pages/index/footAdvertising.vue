@@ -1,8 +1,10 @@
 <template>
     <div class="footAdvertising">
-        <img v-lazy="picSrc"
+        <a :href="picObject.url">
+            <img v-lazy="picObject.pic"
              class="advertising"
              alt="" />
+        </a>
         <div class="context">
             <h5>友情链接</h5>
             <ul class="fx">
@@ -16,13 +18,15 @@
     export default {
         data(){
             return {
-                picSrc: '',
-                schoolList: [
-                    {title:'北京大学',url:'https://www.pku.edu.cn/'},
-                    {title:'清华大学',url:'https://www.tsinghua.edu.cn/publish/thu2018/index.html'},
-                    {title:'重庆大学',url:'http://www.cqu.edu.cn/'},
-                    {title:'重庆交通大学',url:'http://www.cqjtu.edu.cn/'},
-                ]
+                picObject: '',
+                schoolList: ['西南大学', '重庆工商大学', '洞庭湖大学', '重庆工商大学', '洞庭湖大学'
+                    , '重庆工商大学', '洞庭湖大学', '重庆工商大学', '洞庭湖大学', '重庆工商大学', '洞庭湖大学'
+                    , '重庆工商大学', '洞庭湖大学', '重庆工商大学', '洞庭湖大学', '重庆工商大学', '洞庭湖大学'
+                    , '重庆工商大学', '洞庭湖大学', '重庆工商大学', '洞庭湖大学', '重庆工商大学','西南大学'
+                    , '重庆工商大学', '洞庭湖大学', '重庆工商大学', '洞庭湖大学'
+                    , '重庆工商大学', '洞庭湖大学', '重庆工商大学', '洞庭湖大学', '重庆工商大学', '洞庭湖大学'
+                    , '重庆工商大学', '洞庭湖大学', '重庆工商大学', '洞庭湖大学', '重庆工商大学', '洞庭湖大学'
+                    , '重庆工商大学', '洞庭湖大学', '重庆工商大学', '洞庭湖大学', '重庆工商大学']
             }
         },
         methods: {
@@ -42,7 +46,7 @@
                 // })
             },
             async getPic(){
-              this.picSrc = (await this.getAdvertisingData(5))[0].pic;
+              this.picObject = (await this.getAdvertisingData(5))[0];
             },
             toPage(url){
                 window.open(url);

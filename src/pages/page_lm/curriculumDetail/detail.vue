@@ -68,7 +68,7 @@
           return
         }
 
-        let url = 'http://www.chuniaoedu.com/#/onlineConsulting?category=3&id=' + this.obj.schoolId,
+        let url = 'http://192.168.3.87:8080/#/onlineConsulting?category=3&id=' + this.obj.schoolId,
             name = 'newWindow',
             configuration = "scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no," +
                     "width=626,height=500,left=100,top=100";

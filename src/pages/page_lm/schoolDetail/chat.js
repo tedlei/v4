@@ -134,7 +134,7 @@ export default {
          * socket
          */
         createSocket(){
-            let ws = socket(this.localtion+':9091');
+            let ws = socket('http://192.168.3.88:9108');
             ws.on('communication', msg => {   // key 用于接受服务端定义为key的对应消息
                 this.send(msg, 'from');
             });

@@ -11,6 +11,7 @@
 import schoolHeader from './schoolHeader'
 
 import footAdvertising from '@/pages/index/footAdvertising'
+import { isNull } from 'util'
   export default {
     components:{schoolHeader,footAdvertising},
     data() {
@@ -27,12 +28,32 @@ import footAdvertising from '@/pages/index/footAdvertising'
     },
     created(){
       let obj = this.$route.query;
+      
+      // this.verifySign(obj.id);
+
       let num = obj.num;
       if(num)this.num = num*1;
       else this.num = 0;
       this.getSchoolDetail(obj.id)
     },
     methods:{
+      /**
+       * 检测当从后台跳转来时是否与当前账号一致  不一致则退出
+       */
+      verifySign(schoolId){
+        let userInfo = this.getItem('userInfo');
+        
+        // 不存在或为非学校用户或学校id不同
+        if (!isNull(userInfo) && !(userInfo && userInfo.schoolUser && userInfo.schoolUser.id === schoolId)) {
+          // 退出并清除用户数据
+          this.$message({
+            message: "与当前账号不一致，已退出",
+            type: "warning"
+          })
+          this.removeItemUserInfo();
+        }
+      },
+
       //header控制
       topHea:function(num,src){
         if(num===4){
