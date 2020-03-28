@@ -25,7 +25,7 @@ import pecImgList from './pecImgList'
 import pecRightHeader from './pecRightHeader'
 import pecRightPhoto from './pecRightPhoto'
 
-import personalData from './personalData/personalData'
+import personalData from './personalData/personalData.vue'
 import wdAttention from './wdAttention/wdAttention'
 import subscribe from './subscribe/subscribe'
 import coupon from './coupon/coupon'

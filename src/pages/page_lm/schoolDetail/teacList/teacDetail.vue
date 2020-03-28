@@ -4,7 +4,7 @@
     <target class="teacd_d2" :schoolObj="schoolObj" :teacherList="teacherList" :obj="obj"></target>
     <!-- <recommend  @getCurrListData="getCurrListData" :obj="obj" :teacherList="teacherList" :listType="'teacList'" class="teacd_d3"></recommend> -->
     <div class="popup fx" v-if="isShowPopup">
-      <popup @ControlPopup="ControlPopup" :obj="obj"></popup>
+      <popup @ControlPopup="ControlPopup" :obj="obj" type="teac"></popup>
     </div>
   </div>
 </template>
@@ -30,6 +30,7 @@ import popup from '@/pages/page_lm/public/popup'
     methods:{
       ControlPopup:function(boo){
         this.isShowPopup=boo;
+        if(!boo)this.$children[0].seachIsYy = true;
       },
 
       //获取教师信息

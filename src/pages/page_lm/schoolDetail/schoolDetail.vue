@@ -35,11 +35,23 @@ import footAdvertising from '@/pages/index/footAdvertising'
     methods:{
       //header控制
       topHea:function(num,src){
+        if(num===4){
+          let ui = this.getItem('userInfo');
+          if(!ui){
+            this.$message({message:'请登录后在操作！',type:'warning'});
+          return
+          }
+          if(ui.schoolUser.id===this.teacObj.id){
+            this.$message({message:'请不要和自己聊天！',type:'warning'});
+            return
+          }
+        }
         if(num===5){
           // alert('点击此处跳转学校官网');
           window.open("http://"+src);
           return;
         }
+
         this.$router.push({path:src,query:{num,id:this.$route.query.id}});
       },
 

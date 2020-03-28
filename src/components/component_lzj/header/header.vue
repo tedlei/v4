@@ -371,7 +371,8 @@
                     if(!url) return;
                     let userInfo = this.userInfo;
                     if(url==='schoolAdmin'){   //跳转到学校后台
-                        location.href = "http://www.chuniaoedu.com.cn/#/index?schoolNum="+this.compile(userInfo.user.phone);
+                        //location.href = "http://www.chuniaoedu.com.cn/#/index?schoolNum="+this.compile(userInfo.user.phone);
+                        location.href = "http://127.0.0.1:8081/#/index?schoolNum="+this.compile(userInfo.user.phone);
                         return
                     }
 

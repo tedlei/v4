@@ -55,7 +55,7 @@
         return eval(val.split(','))
       },
 
-      topList:function(id,i){
+      topList:function(id){
         if(id===this.currId){
           scrollTo({top: 0,behavior: "smooth"});  //滑动到网页顶部
           return
@@ -189,6 +189,7 @@
             break;
           }
           str = str?str:'../../../../public/images/currImg.jpg';
+          console.log(str)
           return str;
         } 
       },

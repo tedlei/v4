@@ -53,6 +53,7 @@ import paging from '@/pages/page_lm/public/paging'
           // data = {userId:userInfo.user.id,pageNum:''+this.nowPage,pageSize:'9'}
         }
         this.fetch({url,data,method},IP).then(res=>{
+          console.log(res);
           this.overallPages = res.data.total;
           this.attentionList = res.data.rows;
         })

@@ -226,9 +226,9 @@ export default {
       }
       this.fetch({url,data:userInfo,method:'post'},2).then(res=>{
         if(res.data.success){
-          this.$message({message:res.data.message,type:'success'});
+          this.$message({message:'提交成功，请等待审核',type:'success'});
           setTimeout(() => {
-            // this.decideIsLogin(userInfo.user.phone);
+            this.decideIsLogin(userInfo.user.phone);
           }, 2000);
         }else{
           this.$message({message:res.data.message,type:'warning'});
@@ -237,16 +237,16 @@ export default {
     },
     
     // 判断是否登录
-    // decideIsLogin(phone){
-      // let userInfo = this.getItem('userInfo');
-      // if(userInfo){
-      //   if(userInfo.user.phone===phone){
-      //     this.push('/index');
-      //     return 
-      //   }
-      // }
-      // this.quit();
-    // },
+    decideIsLogin(phone){
+      let userInfo = this.getItem('userInfo');
+      if(userInfo){
+        if(userInfo.user.phone===phone){
+          this.push('/index');
+          return 
+        }
+      }
+      this.quit();
+    },
 
     //自动获取地址
     autoGetCity(d1,d2,d3){

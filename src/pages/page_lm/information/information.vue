@@ -17,12 +17,12 @@
 <script>
 import breadcrumb from '@/components/component_lm/breadcrumb'
 import schColList from "@/pages/page_lm/public/schColList"
-import footAdvertising from '@/pages/index/footAdvertising'
+// import footAdvertising from '@/pages/index/footAdvertising'
   export default {
-    components:{breadcrumb,schColList,footAdvertising,},
+    components:{breadcrumb,schColList},
     data() {
       return {
-        list:[],
+        list:[]
       }
     },
     created(){
@@ -31,7 +31,7 @@ import footAdvertising from '@/pages/index/footAdvertising'
     methods:{
       getList(){
         let url = '/schoolMessage/getMessage.do';
-        let data = {type:"",topic:'',index:"0",status:'1',port:'0'}
+        let data = {type:"",topic:'',index:"0",status:'1',port:'0',pageSize:'10'}
         this.fetch({url,data,method:"post"},1).then(res=>{
           let arr = res.data.list;
           let list = [];
