@@ -44,6 +44,8 @@ import target from './target'
       //点击X关闭弹窗
       ControlPopup:function(boo){
         this.isShowPopup=boo;
+        console.log(1111111);
+        
         if(!boo)this.$children[1].seachIsYy = true;
       },
 
